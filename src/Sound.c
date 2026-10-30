@@ -4,6 +4,20 @@
 // * Sound file: sine wave through DAC1 (PA4) using DMA and TIM6, from Project 4
 // *****************************************************************
 
+/*
+ * SOUND HARDWARE
+ *
+ * TIM6 - Sets DAC sample rate using ARR
+ * DMA1 Stream 5, Channel 7 - Circular sine sample transfers
+ * DAC Channel 1 - Converts samples into analog voltage
+ *
+ * PA4 - DAC analog output
+ * PB6 - Amplifier enable/shutdown control
+ *
+ * 100 samples per sine wave cycle
+ * Higher frequency = smaller TIM6 ARR
+ */
+
 #include "Sound.h"
 
 #define DAC_PIN       4

@@ -4,6 +4,23 @@
 // * NeoPixel (WS2812B) file, PB11 = TIM2_CH4 PWM driven by DMA
 // *****************************************************************
 
+
+/*
+ * NEOPIXEL HARDWARE
+ *
+ * TIM2 Channel 4 - Generates PWM pulses
+ * DMA1 Stream 7, Channel 3 - Updates TIM2 CCR4
+ * PB11 (AF1) - NeoPixel data output
+ *
+ * 4 LEDs x 24 bits = 96 color bits
+ * GRB color order
+ * Short HIGH pulse = 0
+ * Long HIGH pulse = 1
+ *
+ * DMA normal mode: one transmission per color update
+ */
+
+ 
 #include "NeoPixel.h"
 
 #define BITS_PER_LED  24

@@ -4,6 +4,24 @@
 // * seven segment display (SSD) file
 // *****************************************************************
 
+/*
+ * SEVEN-SEGMENT DISPLAY
+ *
+ * TIM5 - Refresh interrupt at 400 Hz (handled in main.c)
+ *
+ * Digit selects:
+ * CA1 = PE10
+ * CA2 = PE7
+ * CA3 = PB5
+ * CA4 = PB3
+ *
+ * Segments:
+ * A = PG9    B = PF12   C = PF13   D = PG14
+ * E = PE8    F = PF15   G = PB4    DP = PF14
+ *
+ * Displays frequency as xxx.x Hz
+ */
+
 #include "ssd.h"
 
 typedef struct { GPIO_TypeDef *port; uint8_t pin; } PinDef;

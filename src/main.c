@@ -9,6 +9,22 @@
 // * color on the NeoPixels. Slide switch S1 enables the audio.
 // *****************************************************************
 
+
+/*
+ * PROJECT 7 - THEREMIN
+ *
+ * SysTick - 1 ms interrupts; measurement flag every 200 ms
+ * TIM7    - Microsecond timing for ultrasonic echo
+ * EXTI1   - Detects rising/falling edges on PG1
+ * TIM5    - 400 Hz interrupts for SSD refresh
+ *
+ * HC-SR04 TRIG - PE3
+ * HC-SR04 ECHO - PG1
+ * Switch S1    - PC8
+ *
+ * Main program converts distance into note, frequency,
+ * and RGB color, then updates the output peripherals.
+ */
 #include "stm32f4xx.h"
 #include "OLED.h"
 #include "SysClock180MHz.h"
